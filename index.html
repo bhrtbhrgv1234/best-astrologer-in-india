@@ -3,6 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        try {
+          var _nativeFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return _nativeFetch;
+            },
+            set: function(fn) {
+              _nativeFetch = fn;
+            }
+          });
+        } catch (e) {
+          try {
+            if (typeof Window !== 'undefined' && Window.prototype) {
+              var _protoFetch = window.fetch ? window.fetch.bind(window) : undefined;
+              Object.defineProperty(Window.prototype, 'fetch', {
+                configurable: true,
+                enumerable: true,
+                get: function() {
+                  return _protoFetch;
+                },
+                set: function(fn) {
+                  _protoFetch = fn;
+                }
+              });
+            }
+          } catch (err) {}
+        }
+
+        window.addEventListener('error', function(event) {
+          if (event && event.message && event.message.indexOf('Cannot set property fetch of') !== -1) {
+            event.preventDefault();
+            return true;
+          }
+        });
+      })();
+    </script>
     <meta name="google-site-verification" content="ofto4nbXMEMDK1wt3iSBliBfbPinsMLbTDivTIsHdG8" />
     <title>Best Astrologer in India | Astrologer Kamal Shastri - Vedic Consultation</title>
     <meta name="description" content="Consult with the Best Astrologer in India, Astrologer Kamal Shastri. Expert Vedic astrology guidance for Kundli analysis, marriage, career, love, and life path." />
