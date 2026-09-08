@@ -7,6 +7,7 @@ import { ALL_SERVICES } from '../data/servicesData';
 import { CATEGORIES } from '../data/categories';
 import { ServiceCategory } from '../types';
 import { getServiceExternalUrl } from '../data/externalLinks';
+import { getCanonicalUrl, buildBreadcrumbSchema } from '../utils/seo';
 
 export function ServicesIndexPage() {
   const primaryPhone = '+919887952163';
@@ -17,18 +18,21 @@ export function ServicesIndexPage() {
     { label: 'Astrology Services Directory', url: '/services' }
   ];
 
-  const servicesSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Vedic Astrology Services by Astrologer Kamal Shastri',
-    description: 'Comprehensive directory of 21 personalized Vedic astrology consultation services in India.',
-    itemListElement: ALL_SERVICES.map((service, idx) => ({
-      '@type': 'ListItem',
-      position: idx + 1,
-      name: service.title,
-      url: `/${service.slug}`
-    }))
-  };
+  const servicesSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Vedic Astrology Services by Astrologer Kamal Shastri',
+      description: 'Comprehensive directory of 21 personalized Vedic astrology consultation services in India.',
+      itemListElement: ALL_SERVICES.map((service, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        name: service.title,
+        url: getCanonicalUrl(service.slug)
+      }))
+    },
+    buildBreadcrumbSchema(breadcrumbs)
+  ];
 
   const filteredServices = selectedCategory === 'all'
     ? ALL_SERVICES
@@ -47,8 +51,8 @@ export function ServicesIndexPage() {
   return (
     <div className="space-y-12 lg:space-y-16 pb-16">
       <SEOHead
-        title="Astrology Consultation Services in India | Astrologer Kamal Shastri"
-        description="Explore 21 personalized Vedic astrology services by Astrologer Kamal Shastri. Expert consultations for Kundli, marriage, career, business, Vastu, and remedies."
+        title="Vedic Astrology Services in India | Best Astrologer Kamal Shastri"
+        description="Explore 21 personalized Vedic astrology consultation disciplines by Astrologer Kamal Shastri, widely recognized among the best astrologers in India. Kundli, marriage, career, and Vastu."
         canonicalPath="/services"
         schema={servicesSchema}
       />

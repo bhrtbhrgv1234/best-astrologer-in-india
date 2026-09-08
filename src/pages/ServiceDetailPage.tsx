@@ -6,6 +6,7 @@ import { ConsultationForm } from '../components/ConsultationForm';
 import { getServiceBySlug, getRelatedServices } from '../data/servicesData';
 import { getServiceExternalUrl } from '../data/externalLinks';
 import { NotFoundPage } from './NotFoundPage';
+import { getCanonicalUrl, buildBreadcrumbSchema, buildPersonSchema } from '../utils/seo';
 
 interface ServiceDetailPageProps {
   slug: string;
@@ -32,21 +33,18 @@ export function ServiceDetailPage({ slug }: ServiceDetailPageProps) {
     {
       '@context': 'https://schema.org',
       '@type': 'Service',
-      '@id': `https://astrologerkamal.com/${service.slug}#service`,
+      '@id': `${getCanonicalUrl(service.slug)}#service`,
+      url: getCanonicalUrl(service.slug),
       name: service.title,
       description: service.metaDescription,
-      provider: {
-        '@type': 'Person',
-        name: 'Astrologer Kamal Shastri',
-        telephone: '+919887952163',
-        url: 'https://astrologerkamal.com/'
-      },
+      provider: buildPersonSchema(),
       areaServed: {
         '@type': 'Country',
         name: 'India'
       },
       serviceType: service.tag
     },
+    buildBreadcrumbSchema(breadcrumbs),
     {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',

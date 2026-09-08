@@ -9,9 +9,10 @@ export function NotFoundPage() {
   return (
     <div className="py-16 sm:py-24 text-center px-4">
       <SEOHead
-        title="Page Not Found | Astrologer Kamal Shastri"
+        title="Page Not Found | Best Astrologer in India"
         description="The requested page could not be found. Return to Astrologer Kamal Shastri home or browse our 21 Vedic astrology consultation disciplines."
         canonicalPath="/404"
+        noindex={true}
       />
 
       <div className="max-w-md mx-auto space-y-6">

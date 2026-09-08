@@ -2,6 +2,7 @@ import { Phone, ShieldCheck, Sparkles, CheckCircle2, ArrowRight, BookOpen, Compa
 import { Link } from '../context/RouterContext';
 import { SEOHead } from '../components/SEOHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { buildBreadcrumbSchema, buildPersonSchema } from '../utils/seo';
 
 export function AboutPage() {
   const primaryPhone = '+919887952163';
@@ -12,23 +13,15 @@ export function AboutPage() {
   ];
 
   const aboutSchema = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: 'Astrologer Kamal Shastri',
-      jobTitle: 'Vedic Astrologer & Spiritual Consultant',
-      url: 'https://astrologerkamal.com/about',
-      telephone: '+919887952163',
-      description: 'Astrologer Kamal Shastri provides personalized Vedic astrology guidance across relationships, marriage, career, business, Kundli analysis, numerology, Vastu and traditional remedial guidance.',
-      sameAs: ['https://astrologerkamal.com/']
-    }
+    buildPersonSchema(),
+    buildBreadcrumbSchema(breadcrumbs)
   ];
 
   return (
     <div className="space-y-12 lg:space-y-16 pb-16">
       <SEOHead
-        title="About Astrologer Kamal Shastri | Vedic Astrologer in India"
-        description="Learn about Astrologer Kamal Shastri, his classical Vedic astrology philosophy, ethical consultation standards, and compassionate life guidance."
+        title="About Astrologer Kamal Shastri | Best Astrologer in India"
+        description="Learn about Astrologer Kamal Shastri, widely recognized among the best Vedic astrologers in India, his classical Parashari philosophy, and ethical consultation standards."
         canonicalPath="/about"
         schema={aboutSchema}
       />

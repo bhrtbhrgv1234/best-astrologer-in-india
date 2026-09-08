@@ -1,6 +1,7 @@
 import { ShieldCheck } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { buildBreadcrumbSchema } from '../utils/seo';
 
 export function PrivacyPolicyPage() {
   const breadcrumbs = [
@@ -13,6 +14,7 @@ export function PrivacyPolicyPage() {
         title="Privacy Policy | Astrologer Kamal Shastri"
         description="Privacy policy outlining how birth information, telephone numbers, and consultation discussions are safeguarded by Astrologer Kamal Shastri."
         canonicalPath="/privacy-policy"
+        schema={buildBreadcrumbSchema(breadcrumbs)}
       />
 
       <Breadcrumbs items={breadcrumbs} />

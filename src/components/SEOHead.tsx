@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { getCanonicalUrl, SITE_NAME, DEFAULT_OG_IMAGE } from '../utils/seo';
 
 interface SEOHeadProps {
   title: string;
@@ -7,20 +8,31 @@ interface SEOHeadProps {
   schema?: Record<string, unknown> | Record<string, unknown>[];
   ogType?: string;
   ogImage?: string;
+  keywords?: string;
+  noindex?: boolean;
 }
 
 export function SEOHead({
   title,
   description,
+  canonicalPath,
   schema,
   ogType = 'website',
-  ogImage = 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1200&q=80'
+  ogImage = DEFAULT_OG_IMAGE,
+  keywords = 'Best Astrologer in India, Astrologer in India, Vedic Astrologer, Kundli Analysis, Kundli Matching, Marriage Problem Solution, Career Astrology, Astrologer Kamal Shastri',
+  noindex = false,
 }: SEOHeadProps) {
   useEffect(() => {
-    // Update Title
+    // 1. Compute exact canonical URL
+    const pathname = canonicalPath !== undefined 
+      ? canonicalPath 
+      : (typeof window !== 'undefined' ? window.location.pathname : '');
+    const canonicalUrl = getCanonicalUrl(pathname);
+
+    // 2. Update Browser Title
     document.title = title;
 
-    // Helper to update or create meta tag
+    // Helper function to safely update or append meta tags
     const setMeta = (name: string, content: string, isProperty = false) => {
       const attr = isProperty ? 'property' : 'name';
       let element = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
@@ -32,24 +44,46 @@ export function SEOHead({
       element.content = content;
     };
 
+    // 3. Essential Search Engine Directives
     setMeta('description', description);
+    setMeta('keywords', keywords);
+    setMeta('author', 'Astrologer Kamal Shastri');
+    setMeta(
+      'robots',
+      noindex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+    );
+    setMeta('geo.region', 'IN');
+    setMeta('geo.placename', 'India');
+
+    // 4. Open Graph Social Metadata
     setMeta('og:title', title, true);
     setMeta('og:description', description, true);
-    if (typeof window !== 'undefined') {
-      setMeta('og:url', window.location.href, true);
-    }
+    setMeta('og:url', canonicalUrl, true);
     setMeta('og:type', ogType, true);
     setMeta('og:image', ogImage, true);
+    setMeta('og:image:alt', title, true);
+    setMeta('og:site_name', SITE_NAME, true);
+    setMeta('og:locale', 'en_IN', true);
+
+    // 5. Twitter Card Metadata
     setMeta('twitter:card', 'summary_large_image');
     setMeta('twitter:title', title);
     setMeta('twitter:description', description);
     setMeta('twitter:image', ogImage);
+    setMeta('twitter:url', canonicalUrl);
 
-    // Remove any canonical link targeting external domain as instructed
-    const canonicalLinks = document.querySelectorAll('link[rel="canonical"]');
-    canonicalLinks.forEach(link => link.remove());
+    // 6. Manage Single Canonical Link Element
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', canonicalUrl);
 
-    // Update Structured Data JSON-LD
+    // 7. Inject Structured Data (Schema.org JSON-LD)
     const existingScript = document.getElementById('json-ld-schema');
     if (existingScript) {
       existingScript.remove();
@@ -64,10 +98,11 @@ export function SEOHead({
     }
 
     return () => {
+      // Cleanup schema script on unmount
       const s = document.getElementById('json-ld-schema');
       if (s) s.remove();
     };
-  }, [title, description, schema, ogType, ogImage]);
+  }, [title, description, canonicalPath, schema, ogType, ogImage, keywords, noindex]);
 
   return null;
 }

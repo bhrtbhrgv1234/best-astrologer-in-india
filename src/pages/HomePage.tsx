@@ -5,56 +5,11 @@ import { ConsultationForm } from '../components/ConsultationForm';
 import { ALL_SERVICES } from '../data/servicesData';
 import { VERIFIED_REVIEWS } from '../data/reviewsData';
 import { EXTERNAL_SITE_LINKS } from '../data/externalLinks';
+import { buildOrganizationSchema, buildPersonSchema, buildWebSiteSchema } from '../utils/seo';
 
 export function HomePage() {
   const primaryPhone = '+919887952163';
   const displayPhone = '+91 9887952163';
-
-  // Core structured data for the Astrologer in India homepage
-  const homepageSchema = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
-      '@id': 'https://astrologerkamal.com/#organization',
-      name: 'Astrologer Kamal Shastri',
-      url: 'https://astrologerkamal.com/',
-      telephone: '+919887952163',
-      priceRange: '$$',
-      description: 'Professional Vedic astrology consultation service in India by Astrologer Kamal Shastri. Personalized guidance on Kundli analysis, marriage, career, and life path.',
-      areaServed: {
-        '@type': 'Country',
-        name: 'India'
-      },
-      knowsAbout: [
-        'Vedic Astrology',
-        'Kundli Analysis',
-        'Kundli Matching',
-        'Marriage Problem Solution',
-        'Career Astrology',
-        'Vastu Shastra',
-        'Panchang',
-        'Dosha Analysis'
-      ]
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      '@id': 'https://astrologerkamal.com/#person',
-      name: 'Astrologer Kamal Shastri',
-      jobTitle: 'Vedic Astrologer & Consultant',
-      telephone: '+919887952163',
-      url: 'https://astrologerkamal.com/',
-      description: 'Astrologer Kamal Shastri provides personalized Vedic astrology guidance across areas such as relationships, marriage, career, business, Kundli analysis, numerology, Vastu and traditional remedial guidance.'
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      '@id': 'https://astrologerkamal.com/#website',
-      url: 'https://astrologerkamal.com/',
-      name: 'Astrologer Kamal Shastri',
-      description: 'Professional astrology consultation in India by Astrologer Kamal Shastri.'
-    }
-  ];
 
   const coreServices = ALL_SERVICES.slice(0, 8);
 
@@ -85,11 +40,30 @@ export function HomePage() {
     }
   ];
 
+  // Core structured data for the Best Astrologer in India homepage
+  const homepageSchema = [
+    buildOrganizationSchema(),
+    buildPersonSchema(),
+    buildWebSiteSchema(),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(faq => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer
+        }
+      }))
+    }
+  ];
+
   return (
     <div className="space-y-16 lg:space-y-24">
       <SEOHead
-        title="Astrologer in India | Astrologer Kamal Shastri - Vedic Consultation"
-        description="Professional Vedic astrology consultation in India by Astrologer Kamal Shastri. Personalized guidance for Kundli analysis, marriage, career, relationship, and life path."
+        title="Best Astrologer in India | Astrologer Kamal Shastri - Vedic Consultation"
+        description="Consult with the Best Astrologer in India, Astrologer Kamal Shastri. Personalized guidance for Kundli analysis, marriage, career, relationship, and life path."
         canonicalPath="/"
         schema={homepageSchema}
       />

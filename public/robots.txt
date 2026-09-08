@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /404
 
-Sitemap: https://astrologerkamal.com/sitemap.xml
+Sitemap: https://best-astrologer-in-india.netlify.app/sitemap.xml

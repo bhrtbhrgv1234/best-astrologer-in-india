@@ -1,6 +1,7 @@
 import { ShieldAlert, Phone } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { buildBreadcrumbSchema } from '../utils/seo';
 
 export function DisclaimerPage() {
   const primaryPhone = '+919887952163';
@@ -16,6 +17,7 @@ export function DisclaimerPage() {
         title="Ethical & Legal Disclaimer | Astrologer Kamal Shastri"
         description="Official disclaimer regarding Vedic astrology consultations, spiritual guidance, and ethical standards by Astrologer Kamal Shastri."
         canonicalPath="/disclaimer"
+        schema={buildBreadcrumbSchema(breadcrumbs)}
       />
 
       <Breadcrumbs items={breadcrumbs} />

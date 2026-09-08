@@ -2,6 +2,7 @@ import { Phone, ShieldCheck, Sparkles, MessageSquare, ExternalLink } from 'lucid
 import { SEOHead } from '../components/SEOHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { VERIFIED_REVIEWS } from '../data/reviewsData';
+import { buildBreadcrumbSchema, buildOrganizationSchema, getCanonicalUrl } from '../utils/seo';
 
 export function ReviewsPage() {
   const primaryPhone = '+919887952163';
@@ -11,12 +12,25 @@ export function ReviewsPage() {
     { label: 'Client Feedback & Reviews', url: '/reviews' }
   ];
 
+  const reviewsSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemPage',
+      name: 'Client Feedback & Consultation Reviews - Astrologer Kamal Shastri',
+      url: getCanonicalUrl('reviews'),
+      description: 'Authentic consultation feedback and verified client experiences with Astrologer Kamal Shastri across India.',
+      mainEntity: buildOrganizationSchema()
+    },
+    buildBreadcrumbSchema(breadcrumbs)
+  ];
+
   return (
     <div className="space-y-12 lg:space-y-16 pb-16">
       <SEOHead
-        title="Client Reviews & Consultation Feedback | Astrologer Kamal Shastri"
-        description="Authentic consultation reflections and feedback from clients who have consulted with Astrologer Kamal Shastri across India. Strict confidentiality respected."
+        title="Client Reviews & Consultation Feedback | Best Astrologer in India"
+        description="Authentic consultation reflections and feedback from clients who consulted with Astrologer Kamal Shastri across India. Ethical, verified, and confidential."
         canonicalPath="/reviews"
+        schema={reviewsSchema}
       />
 
       <Breadcrumbs items={breadcrumbs} />

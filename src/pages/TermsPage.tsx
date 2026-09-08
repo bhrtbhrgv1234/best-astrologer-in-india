@@ -1,5 +1,6 @@
 import { SEOHead } from '../components/SEOHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { buildBreadcrumbSchema } from '../utils/seo';
 
 export function TermsPage() {
   const breadcrumbs = [
@@ -12,6 +13,7 @@ export function TermsPage() {
         title="Terms & Conditions | Astrologer Kamal Shastri"
         description="Terms and conditions governing Vedic astrology consultation services and website usage with Astrologer Kamal Shastri."
         canonicalPath="/terms-and-conditions"
+        schema={buildBreadcrumbSchema(breadcrumbs)}
       />
 
       <Breadcrumbs items={breadcrumbs} />

@@ -2,6 +2,7 @@ import { Phone, MessageCircle, Clock, MapPin, Sparkles, ShieldCheck, ExternalLin
 import { SEOHead } from '../components/SEOHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { ConsultationForm } from '../components/ConsultationForm';
+import { getCanonicalUrl, buildBreadcrumbSchema, buildPersonSchema } from '../utils/seo';
 
 export function ContactPage() {
   const primaryPhone = '+919887952163';
@@ -11,24 +12,23 @@ export function ContactPage() {
     { label: 'Contact & Consultation Booking', url: '/contact' }
   ];
 
-  const contactSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ContactPage',
-    name: 'Contact Astrologer Kamal Shastri',
-    description: 'Contact details and appointment booking for Vedic astrology consultation with Astrologer Kamal Shastri.',
-    mainEntity: {
-      '@type': 'Person',
-      name: 'Astrologer Kamal Shastri',
-      telephone: '+919887952163',
-      url: 'https://astrologerkamal.com/'
-    }
-  };
+  const contactSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contact Best Astrologer in India - Astrologer Kamal Shastri',
+      url: getCanonicalUrl('contact'),
+      description: 'Contact details and appointment booking for Vedic astrology consultation with Astrologer Kamal Shastri.',
+      mainEntity: buildPersonSchema()
+    },
+    buildBreadcrumbSchema(breadcrumbs)
+  ];
 
   return (
     <div className="space-y-12 lg:space-y-16 pb-16">
       <SEOHead
-        title="Contact Astrologer Kamal Shastri | Phone: +91 9887952163"
-        description="Book your Vedic astrology consultation with Astrologer Kamal Shastri. Call +91 9887952163 or submit your birth data for a private one-on-one session."
+        title="Contact Astrologer Kamal Shastri | Best Astrologer in India | +91 9887952163"
+        description="Book your Vedic astrology consultation with Astrologer Kamal Shastri, among the best astrologers in India. Call +91 9887952163 or submit your birth details online."
         canonicalPath="/contact"
         schema={contactSchema}
       />

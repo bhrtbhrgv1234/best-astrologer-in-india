@@ -1,180 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Core Main Pages -->
   <url>
-    <loc>https://astrologerkamal.com/</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://best-astrologer-in-india.netlify.app/</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://astrologerkamal.com/about</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/services</loc>
-    <lastmod>2026-09-07</lastmod>
+    <loc>https://best-astrologer-in-india.netlify.app/about</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://astrologerkamal.com/contact</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://best-astrologer-in-india.netlify.app/services</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/contact</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/reviews</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 21 Vedic Astrology Consultation Service Pages -->
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/kundli</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/kundli-analysis</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/kundli-matching</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/matchmaking</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/marriage-problem-solution</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/love-problem-solution</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/relationship-guidance</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/career-problem-solution</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/business-problem-solution</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/financial-astrology</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/life-path-guidance</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/family-problem-solution</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/child-astrology</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://astrologerkamal.com/reviews</loc>
-    <lastmod>2026-09-07</lastmod>
+    <loc>https://best-astrologer-in-india.netlify.app/dosha-analysis</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/traditional-puja-remedies</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/gemstone-consultation</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/vastu-guidance</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/muhurat-guidance</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/numerology-guidance</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/tarot-guidance</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://best-astrologer-in-india.netlify.app/panchang</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Service Pages -->
+  <!-- Legal & Information Pages -->
   <url>
-    <loc>https://astrologerkamal.com/kundli</loc>
-    <lastmod>2026-09-07</lastmod>
+    <loc>https://best-astrologer-in-india.netlify.app/privacy-policy</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/kundli-analysis</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/kundli-matching</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/matchmaking</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/marriage-problem-solution</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/love-problem-solution</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/relationship-guidance</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/career-problem-solution</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/business-problem-solution</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/financial-astrology</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/life-path-guidance</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/family-problem-solution</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/child-astrology</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/dosha-analysis</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/traditional-puja-remedies</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/gemstone-consultation</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/vastu-guidance</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/muhurat-guidance</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/numerology-guidance</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/tarot-guidance</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/panchang</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://astrologerkamal.com/privacy-policy</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://astrologerkamal.com/terms-and-conditions</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://best-astrologer-in-india.netlify.app/terms-and-conditions</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://astrologerkamal.com/disclaimer</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://best-astrologer-in-india.netlify.app/disclaimer</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
 </urlset>
