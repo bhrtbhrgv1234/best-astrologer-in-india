@@ -48,7 +48,6 @@ export function SEOHead({
     setMeta('description', description);
     setMeta('keywords', keywords);
     setMeta('author', 'Astrologer Kamal Shastri');
-    setMeta('google-site-verification', 'ofto4nbXMEMDK1wt3iSBliBfbPinsMLbTDivTIsHdG8');
     setMeta(
       'robots',
       noindex
